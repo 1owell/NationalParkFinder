@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8847A8BA2633183A004ADB34 /* ParksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847A8B92633183A004ADB34 /* ParksManager.swift */; };
+		8847A8BE2633285D004ADB34 /* ParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847A8BD2633285D004ADB34 /* ParkDetail.swift */; };
 		88B584A326309DCF00FA61BC /* NPF_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584A226309DCF00FA61BC /* NPF_4App.swift */; };
 		88B584A526309DCF00FA61BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584A426309DCF00FA61BC /* ContentView.swift */; };
 		88B584A726309DD000FA61BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B584A626309DD000FA61BC /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8847A8B92633183A004ADB34 /* ParksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksManager.swift; sourceTree = "<group>"; };
+		8847A8BD2633285D004ADB34 /* ParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetail.swift; sourceTree = "<group>"; };
 		88B5849F26309DCF00FA61BC /* NPF-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPF-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B584A226309DCF00FA61BC /* NPF_4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPF_4App.swift; sourceTree = "<group>"; };
 		88B584A426309DCF00FA61BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				88CD910926323F9E00908C14 /* MapTypePicker.swift */,
 				88CD91002630ECF200908C14 /* MapView.swift */,
 				88CD910C263242F500908C14 /* MapTab.swift */,
+				8847A8BD2633285D004ADB34 /* ParkDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				88CD90FD2630E1EC00908C14 /* Landmark.swift */,
 				88B584BD2630A1D000FA61BC /* Park.swift */,
 				88B584C02630B35F00FA61BC /* LocationManager.swift */,
+				8847A8B92633183A004ADB34 /* ParksManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 				88CD91042630F73000908C14 /* AboutView.swift in Sources */,
 				88CD910A26323F9E00908C14 /* MapTypePicker.swift in Sources */,
 				88CD91012630ECF200908C14 /* MapView.swift in Sources */,
+				8847A8BE2633285D004ADB34 /* ParkDetail.swift in Sources */,
 				88CD910D263242F500908C14 /* MapTab.swift in Sources */,
 				88B584A526309DCF00FA61BC /* ContentView.swift in Sources */,
+				8847A8BA2633183A004ADB34 /* ParksManager.swift in Sources */,
 				88B584BE2630A1D000FA61BC /* Park.swift in Sources */,
 				88B584A326309DCF00FA61BC /* NPF_4App.swift in Sources */,
 				88CD91072630F75B00908C14 /* ParksListView.swift in Sources */,

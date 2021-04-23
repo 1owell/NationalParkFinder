@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 // SwiftUI MapTab, holds that MapView
 struct MapTab: View {
@@ -15,24 +16,25 @@ struct MapTab: View {
     @State private var mapType: MKMapType = .standard
     @State private var isZoomedToUser: Bool = false
     
-    @EnvironmentObject var 
+    @EnvironmentObject var parksManager: ParksManager
+    
+    let locationManager = CLLocationManager()
     
     let mapTypes: [String] = ["Standard", "Satelite", "Hybrid"]
     
     var body: some View {
         ZStack {
-            MapView(locationManager: $locationManager,
-                    showMapAlert: $showMapAlert,
-                    parks: $parks,
+            MapView(showMapAlert: $showMapAlert,
                     mapType: $mapType,
                     showLoading: $showLoading,
-                    isZoomedToUser: $isZoomedToUser)
+                    isZoomedToUser: $isZoomedToUser,
+                    locationManager: locationManager)
                 .alert(isPresented: $showMapAlert) {
                     Alert(title: Text("Location Access Denied"),
                           message: Text("Your location is needed"),
                           primaryButton: .cancel(),
-                          secondaryButton: .default(Text("Settings"),
-                                                    action: { self.goToDeviceSettings() }))
+                          secondaryButton: .default(Text("Settings"), action: { parksManager.goToDeviceSettings() })
+                    )
                 }
                 .edgesIgnoringSafeArea(.all)
             

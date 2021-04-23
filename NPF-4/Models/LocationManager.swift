@@ -31,6 +31,10 @@ class LocationManager: NSObject, ObservableObject {
         willSet { objectWillChange.send() }
     }
     
+    @Published var placemark: CLPlacemark? {
+        willSet { objectWillChange.send() }
+    }
+    
     override init() {
         super.init()
         
@@ -46,9 +50,6 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.startUpdatingLocation()
     }
     
-    @Published var placemark: CLPlacemark? {
-        willSet { objectWillChange.send() }
-    }
     
     private func geocode() {
         guard let location = location else { return }

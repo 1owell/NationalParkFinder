@@ -7,18 +7,19 @@
 
 import SwiftUI
 import MapKit
-import CoreLocation
+
 
 // UIKit MapView
 struct MapView: UIViewRepresentable {
     
-    @Binding var locationManager: CLLocationManager
     @Binding var showMapAlert: Bool
-    @Binding var parks: [Park]
-    
     @Binding var mapType: MKMapType
     @Binding var showLoading: Bool
     @Binding var isZoomedToUser: Bool
+    
+    @EnvironmentObject var parksManager: ParksManager
+    
+    let locationManager: CLLocationManager
 
     let mapView = MKMapView()
     
@@ -82,7 +83,7 @@ struct MapView: UIViewRepresentable {
                   
                     annotationView.leftCalloutAccessoryView  = leftButton
                     annotationView.rightCalloutAccessoryView = rightButton
-
+                    
                     return annotationView
                 }
             }
@@ -93,7 +94,7 @@ struct MapView: UIViewRepresentable {
         
         func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
             // Add the map annotations
-            for park in parent.parks {
+            for park in parent.parksManager.parks {
                 mapView.addAnnotation(park)
             }
         }
@@ -107,16 +108,7 @@ struct MapView: UIViewRepresentable {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             case 1: // right button
-                // make sure location manager has updated before trying to use
-                guard let coordinate = parent.locationManager.location?.coordinate else {
-                    return
-                }
-                let url = String(format: "http://maps.apple.com/maps?saddr=%f,%f&daddr=%f,%f",
-                                 coordinate.latitude,
-                                 coordinate.longitude,
-                                 parkAnnotation.location.coordinate.latitude,
-                                 parkAnnotation.location.coordinate.longitude)
-                UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+                openInMap(parkAnnotation: parkAnnotation)
             default:
                 break
             }
@@ -161,6 +153,15 @@ struct MapView: UIViewRepresentable {
                 @unknown default:
                     break
             }
+        }
+        
+        
+        private func openInMap(parkAnnotation: MKAnnotation) {
+            let place = MKPlacemark(coordinate: parkAnnotation.coordinate, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: place)
+            mapItem.name = parkAnnotation.title!!
+            let options = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+            mapItem.openInMaps(launchOptions: options)
         }
     }
 }
