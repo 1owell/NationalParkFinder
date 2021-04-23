@@ -11,16 +11,15 @@ import MapKit
 // SwiftUI MapTab, holds that MapView
 struct MapTab: View {
     
-    @State private var showMapAlert = false
-    @State private var showLoading: Bool = false
-    @State private var mapType: MKMapType = .standard
+    @State private var showMapAlert         = false
+    @State private var showLoading: Bool    = false
     @State private var isZoomedToUser: Bool = false
+    @State private var mapType: MKMapType   = .standard
     
     @EnvironmentObject var parksManager: ParksManager
     
     let locationManager = CLLocationManager()
     
-    let mapTypes: [String] = ["Standard", "Satelite", "Hybrid"]
     
     var body: some View {
         ZStack {
@@ -33,7 +32,7 @@ struct MapTab: View {
                     Alert(title: Text("Location Access Denied"),
                           message: Text("Your location is needed"),
                           primaryButton: .cancel(),
-                          secondaryButton: .default(Text("Settings"), action: { parksManager.goToDeviceSettings() })
+                          secondaryButton: .default(Text("Settings"), action: { goToDeviceSettings() })
                     )
                 }
                 .edgesIgnoringSafeArea(.all)
@@ -42,7 +41,7 @@ struct MapTab: View {
                 Spacer()
                 
                 HStack(spacing: 30) {
-
+                    
                     Button(action: {
                         // Show loading progress, zoom in to user, start updating location
                         showLoading = true
@@ -72,6 +71,12 @@ struct MapTab: View {
             }
             .offset(y: -30)
         }
+    }
+    
+    
+    func goToDeviceSettings() {
+        guard let url = URL.init(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 
