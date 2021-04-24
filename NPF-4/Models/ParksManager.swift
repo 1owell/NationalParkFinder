@@ -16,6 +16,11 @@ class ParksManager: ObservableObject {
     }
     
     
+//    func distanceAway(from park: Park, locationManager: LocationManager) -> Double {
+//        LocationManager.
+//    }
+    
+    
     private func loadData() -> [Park]? {
         if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
             do {

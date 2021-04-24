@@ -11,7 +11,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @StateObject var locationManager    = LocationManager()
+    //@StateObject var locationManager    = LocationManager()
     @State private var selectedTab: Int = 1
     
     var body: some View {

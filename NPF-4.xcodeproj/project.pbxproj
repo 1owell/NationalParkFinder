@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88147F6026338D310041037A /* ParksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88147F5F26338D310041037A /* ParksManager.swift */; };
+		88147F662633A63E0041037A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88147F652633A63E0041037A /* FavoritesView.swift */; };
 		8847A8BE2633285D004ADB34 /* ParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847A8BD2633285D004ADB34 /* ParkDetail.swift */; };
 		88B584A326309DCF00FA61BC /* NPF_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584A226309DCF00FA61BC /* NPF_4App.swift */; };
 		88B584A526309DCF00FA61BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584A426309DCF00FA61BC /* ContentView.swift */; };
@@ -17,8 +18,6 @@
 		88B584B62630A0BD00FA61BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B584B52630A0BD00FA61BC /* MapKit.framework */; };
 		88B584B82630A10300FA61BC /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88B584B72630A10300FA61BC /* data.plist */; };
 		88B584BE2630A1D000FA61BC /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584BD2630A1D000FA61BC /* Park.swift */; };
-		88B584C12630B35F00FA61BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B584C02630B35F00FA61BC /* LocationManager.swift */; };
-		88CD90FE2630E1EC00908C14 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD90FD2630E1EC00908C14 /* Landmark.swift */; };
 		88CD91012630ECF200908C14 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD91002630ECF200908C14 /* MapView.swift */; };
 		88CD91042630F73000908C14 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD91032630F73000908C14 /* AboutView.swift */; };
 		88CD91072630F75B00908C14 /* ParksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD91062630F75B00908C14 /* ParksListView.swift */; };
@@ -28,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		88147F5F26338D310041037A /* ParksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksManager.swift; sourceTree = "<group>"; };
+		88147F652633A63E0041037A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		8847A8BD2633285D004ADB34 /* ParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetail.swift; sourceTree = "<group>"; };
 		88B5849F26309DCF00FA61BC /* NPF-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NPF-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B584A226309DCF00FA61BC /* NPF_4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPF_4App.swift; sourceTree = "<group>"; };
@@ -39,8 +39,6 @@
 		88B584B52630A0BD00FA61BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		88B584B72630A10300FA61BC /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		88B584BD2630A1D000FA61BC /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
-		88B584C02630B35F00FA61BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		88CD90FD2630E1EC00908C14 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		88CD91002630ECF200908C14 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		88CD91032630F73000908C14 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		88CD91062630F75B00908C14 /* ParksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParksListView.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				88B584BB2630A18500FA61BC /* Views */,
 				88B584B72630A10300FA61BC /* data.plist */,
 				88B584A226309DCF00FA61BC /* NPF_4App.swift */,
-				88B584A426309DCF00FA61BC /* ContentView.swift */,
 				88B584A626309DD000FA61BC /* Assets.xcassets */,
 				88B584AB26309DD000FA61BC /* Info.plist */,
 				88B584A826309DD000FA61BC /* Preview Content */,
@@ -113,12 +110,14 @@
 		88B584BB2630A18500FA61BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88B584A426309DCF00FA61BC /* ContentView.swift */,
 				88CD91032630F73000908C14 /* AboutView.swift */,
 				88CD91062630F75B00908C14 /* ParksListView.swift */,
 				88CD910926323F9E00908C14 /* MapTypePicker.swift */,
 				88CD91002630ECF200908C14 /* MapView.swift */,
 				88CD910C263242F500908C14 /* MapTab.swift */,
 				8847A8BD2633285D004ADB34 /* ParkDetail.swift */,
+				88147F652633A63E0041037A /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,9 +125,7 @@
 		88B584BC2630A18B00FA61BC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88CD90FD2630E1EC00908C14 /* Landmark.swift */,
 				88B584BD2630A1D000FA61BC /* Park.swift */,
-				88B584C02630B35F00FA61BC /* LocationManager.swift */,
 				88147F5F26338D310041037A /* ParksManager.swift */,
 			);
 			path = Models;
@@ -204,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B584C12630B35F00FA61BC /* LocationManager.swift in Sources */,
+				88147F662633A63E0041037A /* FavoritesView.swift in Sources */,
 				88CD91042630F73000908C14 /* AboutView.swift in Sources */,
 				88CD910A26323F9E00908C14 /* MapTypePicker.swift in Sources */,
 				88CD91012630ECF200908C14 /* MapView.swift in Sources */,
@@ -215,7 +212,6 @@
 				88B584BE2630A1D000FA61BC /* Park.swift in Sources */,
 				88B584A326309DCF00FA61BC /* NPF_4App.swift in Sources */,
 				88CD91072630F75B00908C14 /* ParksListView.swift in Sources */,
-				88CD90FE2630E1EC00908C14 /* Landmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

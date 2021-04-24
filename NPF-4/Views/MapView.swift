@@ -20,8 +20,8 @@ struct MapView: UIViewRepresentable {
     @EnvironmentObject var parksManager: ParksManager
     
     let locationManager: CLLocationManager
-
     let mapView = MKMapView()
+    
     
     func makeUIView(context: Context) -> MKMapView {
         // ask for permission
@@ -130,31 +130,6 @@ struct MapView: UIViewRepresentable {
             parent.showLoading = false
         }
   
-        
-        // MARK: Location Manager Delegate Methods
-        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-            let status = CLLocationManager.authorizationStatus()
-            
-            switch status {
-                case .restricted:
-                    break
-                case .denied:
-                    parent.showMapAlert.toggle()
-                    return
-                case .notDetermined:
-                    parent.locationManager.requestWhenInUseAuthorization()
-                    return
-                case .authorizedWhenInUse:
-                    return
-                case .authorizedAlways:
-                    parent.locationManager.allowsBackgroundLocationUpdates = true
-                    parent.locationManager.pausesLocationUpdatesAutomatically = false
-                    return
-                @unknown default:
-                    break
-            }
-        }
-        
         
         private func openInMap(parkAnnotation: MKAnnotation) {
             let place = MKPlacemark(coordinate: parkAnnotation.coordinate, addressDictionary: nil)
